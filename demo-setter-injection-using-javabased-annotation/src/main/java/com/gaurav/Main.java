@@ -1,0 +1,40 @@
+package com.gaurav;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+import com.gaurav.repository.CustomerRepository;
+import com.gaurav.service.CustomerServiceImpl;
+import com.gaurav.util.SpringConfiguration;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AbstractApplicationContext aps=new AnnotationConfigApplicationContext(SpringConfiguration.class);
+		CustomerServiceImpl service=null;
+		service=(CustomerServiceImpl) aps.getBean("customerService");
+		System.out.println(service.fetchCustomer());
+		
+		
+		
+		
+		
+		AbstractApplicationContext aps2=new AnnotationConfigApplicationContext(SpringConfiguration.class);
+		CustomerServiceImpl service1=null;
+		service1=(CustomerServiceImpl) aps2.getBean("customerService");
+		System.out.println(service1.name());
+		
+		
+		
+		AbstractApplicationContext aps1=new AnnotationConfigApplicationContext(SpringConfiguration.class);
+		CustomerServiceImpl service2=null;
+		service2=(CustomerServiceImpl) aps1.getBean("customerService");
+		System.out.println(service2.createCustomer());
+		
+		
+	}
+
+}

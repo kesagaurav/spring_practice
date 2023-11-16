@@ -1,0 +1,55 @@
+package com.gaurav;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+import com.gaurav.model.Customer;
+import com.gaurav.service.CustomerServiceImpl;
+import com.gaurav.service.PlanService;
+import com.gaurav.service.Prepaid;
+import com.gaurav.util.CustomerUtil;
+import com.gaurav.util.PlanUtil;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PlanService p=new Prepaid();
+		Customer c=new Customer();
+		c.setPlan(p);
+		c.register();
+		CustomerServiceImpl service=null;
+		PlanService p2=null;
+//		AbstractApplicationContext as=new AnnotationConfigApplicationContext(CustomerUtil.class);
+//		service=(CustomerServiceImpl) as.getBean("customerService");
+//		System.out.println(service.createCustomer());
+		AbstractApplicationContext as1=new AnnotationConfigApplicationContext(PlanUtil.class);
+		p2=(PlanService) as1.getBean("planService");
+		System.out.println(p2.enrolledPlan());
+		
+		
+		
+		AbstractApplicationContext as2=new AnnotationConfigApplicationContext(CustomerUtil.class);
+		Customer c1=(Customer) as2.getBean("customer");
+		c1.setCustomerName("gaurav");
+		System.out.println(c1.registerCustomer(c1.getCustomerName()));
+		
+		AbstractApplicationContext as3=new AnnotationConfigApplicationContext(CustomerUtil.class);
+		Customer c2=(Customer) as2.getBean("customer");
+		c2.setAge(23);
+		System.out.println(c2.voterAge(c2.getAge()));
+		
+		
+		
+		
+		AbstractApplicationContext as4=new AnnotationConfigApplicationContext(CustomerUtil.class);
+		Customer c3=(Customer) as4.getBean("customer");
+		c2.setAge(15);
+		System.out.println(c3.voterAge(c3.getAge()));
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.gaurav.model;
+
+import com.gaurav.service.PlanService;
+
+public class Customer {
+
+	private PlanService plan;
+	private String customerName;
+
+	public void setPlan(PlanService plan) {
+		this.plan = plan;
+	}
+	
+	
+	private String getCustomerName() {
+		return customerName;
+	}
+	
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+
+
+
+	public void register() {
+		if(plan.enrolledPlan()) {
+			System.out.println("customer enrolled successfuly");
+		}else {
+			System.out.println("customer not registered");
+		}
+	}
+	
+	
+}

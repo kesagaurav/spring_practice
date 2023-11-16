@@ -1,0 +1,17 @@
+package com.gaurav;
+
+import com.gaurav.model.Customer;
+import com.gaurav.service.PlanService;
+import com.gaurav.service.Prepaid;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PlanService p=new Prepaid();
+		Customer c=new Customer();
+		c.setPlan(p);
+		c.register();
+	}
+
+}

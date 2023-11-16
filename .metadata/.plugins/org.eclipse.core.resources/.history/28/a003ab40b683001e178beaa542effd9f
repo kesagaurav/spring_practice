@@ -1,0 +1,22 @@
+package com.gaurav.model;
+
+import com.gaurav.service.PlanService;
+
+public class Customer {
+
+	private PlanService plan;
+
+	public void setPlan(PlanService plan) {
+		this.plan = plan;
+	}
+	
+	public void register() {
+		if(plan.enrolledPlan()) {
+			System.out.println("customer enrolled successfuly");
+		}else {
+			System.out.println("customer not registered");
+		}
+	}
+	
+	
+}

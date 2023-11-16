@@ -1,0 +1,11 @@
+package com.gaurav.util;
+
+import com.gaurav.service.PlanService;
+import com.gaurav.service.PostPaid;
+
+public class PlanUtil {
+
+	public PlanService getPlanService() {
+		return new PostPaid();
+	}
+}

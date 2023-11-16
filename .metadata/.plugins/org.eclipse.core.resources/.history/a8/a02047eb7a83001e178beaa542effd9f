@@ -1,0 +1,23 @@
+package com.gaurav;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+import com.gaurav.service.CustomerServiceImpl;
+import com.gaurav.util.CustomerUtil;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//ApplicationContext ap=new ClassPathXmlApplicationContext(CustomerUtil.class);
+		AbstractApplicationContext context=new AnnotationConfigApplicationContext(CustomerUtil.class);
+		CustomerServiceImpl impl=null;
+		impl=(CustomerServiceImpl) context.getBean(CustomerServiceImpl.class,"customerService");
+		System.out.println(impl.getCustomer());
+		context.close();
+
+	}
+
+}

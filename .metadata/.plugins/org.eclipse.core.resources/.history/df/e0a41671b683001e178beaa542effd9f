@@ -1,0 +1,15 @@
+package com.gaurav.util;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.gaurav.service.CustomerServiceImpl;
+
+@Configuration
+public class CustomerUtil {
+	@Bean(name = "customerService")
+	public CustomerServiceImpl getCustomerImpl() {
+		return new CustomerServiceImpl();
+	}
+
+}

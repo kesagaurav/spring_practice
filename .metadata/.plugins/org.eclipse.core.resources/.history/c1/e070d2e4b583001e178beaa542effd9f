@@ -1,0 +1,17 @@
+package com.gaurav.service;
+
+public class PostPaid implements PlanService {
+	PlanService ps;
+	public boolean enrolledPlan() {
+		// TODO Auto-generated method stub
+		if(ps.enrolledPlan()==true) {
+			System.out.println("customer is registered successfully");
+			return true;
+		}else {
+			System.out.println("not registered successfully");
+			return false;
+		}
+		//return false;
+	}
+
+}

@@ -1,0 +1,62 @@
+package com.gaurav.service;
+
+import com.gaurav.repository.CustomerRepository;
+
+public class CustomerServiceImpl implements CustomerService {
+	private int count;
+	private CustomerRepository repo;
+	private String name;
+	// constructor injection
+//	public CustomerServiceImpl(CustomerRepository repo) {
+//		super();
+//		this.count = count;
+//		this.repo = repo;
+//	}
+
+	// setter injection
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String fetchCustomer() {
+		// TODO Auto-generated method stub
+		return repo.fetchCustomer(count);
+	}
+
+	public CustomerServiceImpl() {
+		super();
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public CustomerRepository getRepo() {
+		return repo;
+	}
+
+	public void setRepo(CustomerRepository repo) {
+		this.repo = repo;
+	}
+
+	public String createCustomer() {
+		// TODO Auto-generated method stub
+		return repo.createCustomer();
+	}
+
+	@Override
+	public String name() {
+		// TODO Auto-generated method stub
+		return repo.name(name);
+	}
+
+}
